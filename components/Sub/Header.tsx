@@ -30,7 +30,7 @@ const Header = ({ delay }: Props) => {
         transition={{ duration: 1.6, delay: delay | 5.8 }}
         className='w-full h-full flex justify-between items-center p-4 px-12 bg-white/60 rounded-lg shadow-lg'>
       <Link href='/' className='flex cursor-pointer gap-2 items-center '>
-        <Image src={Logo} alt='image' width={35} height={35} />
+        <Image src={'/images/Logo.svg'} alt='image' width={35} height={35} />
         <div className='flex -space-y-2 flex-col'>
           <h2 className='font-semibold text-2xl '>Zenith</h2>
           <h2 className='font-semibold text-xs'>Construction</h2>
