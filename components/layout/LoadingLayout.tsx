@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Counter from '../Sub/Counter';
 import Image from 'next/image';
 import TypingAnimation from '../Animations/TypingAnimation';
-import Logo from '../../public/images/logo.svg'
 
 
 type Props = {}
@@ -49,7 +48,7 @@ const LoadingCover = (props: Props) => {
                             animate={{ rotate: '0deg', opacity: 1 } }
                             transition={{ duration: 2, delay: 3}}
                             className='w-full'>
-                                <Image src={Logo} alt='image' width={60} height={60}
+                                <Image src={'/images/logo.svg'} alt='image' width={60} height={60}
                                     className=''
                                 />
                         </motion.div>
