@@ -84,7 +84,7 @@ const Intro = ({outline}: Props) => {
                               animate={controls}
                               variants={variant01}
                               transition={{ duration: 2, delay: 3, ease: 'easeInOut'}} >
-                              <CustomButton text='black' title='Learn more ' />
+                              <CustomButton  path={'/about'} text='black' title='Learn more ' />
                           </motion.div>
                       </AnimatePresence>
                     </div>

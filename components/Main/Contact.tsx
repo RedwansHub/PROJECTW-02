@@ -18,12 +18,12 @@ const Contact = (props: Props) => {
   return (
     <div className='w-full h-screen '>
         <div className='flex flex-col justify-between items-center h-full relative w-full'>
-          <div className='w-full h-full flex justify-center items-center '>
+          <div className='w-full border-4  h-full flex justify-end lg:items-center items-end '>
         <AnimatePresence>
           <motion.div 
-                className='h-full w-full flex lg:flex-row md:flex-row justify-center items-center flex-col  '>
+                className='lg:h-full h-fit w-full flex lg:flex-row md:flex-row justify-end items-end  flex-col  '>
                 <motion.div
-                    className='w-full bg-white/30 backdrop-blur-sm flex flex-col  gap-4 h-ffull  p-4 py-12  lg:justify-end justify-center lg:items-end items-center '>
+                    className='w-full bg-white/30 backdrop-blur-sm flex flex-col  gap-2 h-fit  p-4 lg:py-12  py-2 lg:justify-end justify-center lg:items-end items-center '>
                         <motion.div >
                             <FadeParagraph2 color='yellow' content='Get in Touch with us'  delay={6}  speed={1} size='Four'/>
                             {/* <h2 className='text-yellow-500 font-semibold  text-4xl '>Get In Touch With Us</h2> */}
@@ -61,8 +61,8 @@ const Contact = (props: Props) => {
 
                 <motion.div 
                     style={{}}
-                    className='w-full flex flex-col justify-center items-center lg:p-4 lg:h-full h-fit  '>
-                        <div className=' lg:p-12 p-6  w-full lg:w-[80%]  md:lg:w-[90%] h-fit  items-center justify-center  '>
+                    className='w-full flex flex-col justify-end items-center lg:p-4 lg:h-full md: h-fit   '>
+                        <div className=' lg:p-12 p-6  w-full lg:w-[80%]  md:lg:w-[90%] h-fit  items-end justify-center  '>
                             <div className='w-full '>
                               {/* <WritingEntry delay={4}> */}
                                 <Form />    

@@ -77,7 +77,7 @@ const DetailServices = ({serviceType}: Props) => {
     }, [View, controls])
 
   return (
-    <div className='w-full h-screen bg-[#FFF6E9] overflow-hidden'>
+    <div className='w-full h-screen bg-[#FFF6E9] border'>
         <div ref={target} className='w-full h-full flex lg:flex-row flex-col-reverse pt-24 px-4 lg:px-24'>
             <AnimatePresence>
             
@@ -86,15 +86,14 @@ const DetailServices = ({serviceType}: Props) => {
                 <motion.div 
                     transition={{ duration: 2, delay: 1}}
                     className='w-full h-fit '>
-                    <TypingAnimation content={selected.desc} delay={0.04} size='medium' color='primary' speed={1}/>
+                    <TypingAnimation content={selected.desc} delay={0.02} size='mediumBold' color='black' speed={1}/>
                         
-                        <h2 className='text-lg  font-medium  w-full '></h2>
                 </motion.div>
                
                 <motion.div 
                         initial={{ opacity: 0}}
                         animate={{ opacity: 1}}
-                        transition={{ duration: 2, delay: 1}}
+                        transition={{ duration: 2, delay: 3}}
                         className='w-full h-fit flex z-40   '>
                             <div className='flex flex-col w-full gap-2'>
                             {selected.list.map(item => (
@@ -103,7 +102,7 @@ const DetailServices = ({serviceType}: Props) => {
                                     initial='hidden'
                                     animate={controls}
                                     variants={vari2}
-                                    transition={{ duration: 1, delay: 0.5 *item.id, ease: 'easeInOut'}}
+                                    transition={{ duration: 2, delay: 0.5 *item.id, ease: 'easeInOut'}}
                                     >
                                     <Card
                                         key={item.id}
@@ -111,7 +110,7 @@ const DetailServices = ({serviceType}: Props) => {
                                         title={item.title}
                                         desc={item.desc}
                                         isOpen={openCardId === item.id}
-                                        onClick={handleCardClick}
+                                        onClick={(e: any) => handleCardClick(e)}
                                     />
                                 </motion.div>
                                 ))}

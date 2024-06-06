@@ -23,12 +23,7 @@ export default function RootLayout({
 
         <div className="w-full h-full">
           <Toaster />
-            <div className='relative w-full z-50 h-fit'>
-              <div className='absolute top-0 p-4 lg:px-24 md:px-8 px-2 w-full h-fit'>
-                    <Header />
-            </div>
-          </div>
-
+            
             {children}
         </div>
         

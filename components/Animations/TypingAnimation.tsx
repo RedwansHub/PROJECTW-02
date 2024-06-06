@@ -15,7 +15,8 @@ type Props = {
 const sizeClasses: { [key: string]: string } = {
     small: 'text-sm font-regular',
     medium: 'text-base font-medium',
-    semi: 'text-base font-semibold',
+    mediumBold: 'text-base font-semibold',
+    semi: 'text-xl font-semibold',
     large: 'text-xl font-bold',
     xlarge: 'text-2xl font-bold',
     xxlarge: 'text-4xl font-bold',

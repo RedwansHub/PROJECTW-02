@@ -8,10 +8,12 @@ import { FadeParagraph2 } from '@/constant/AnimateMotion'
 
 type Props = {
     children: React.ReactNode,
-    title: any
+    title: any,
+    h?: any | 300,
+
 }
 
-const EntryLayout = ({ children, title }: Props) => {
+const EntryLayout = ({ children, h, title }: Props) => {
   const [prevTitle, setPrevTitle] = useState(title)
   const pathname = usePathname()
 
@@ -25,7 +27,7 @@ const EntryLayout = ({ children, title }: Props) => {
           <motion.div
             className={`coverLayer bg-[#333232] absolute w-full h-full flex justify-center items-bottom`}
             initial={{ height: '100%' }}
-            animate={{ height: 300 }}
+            animate={{ height: h }}
             exit={{ height: '100%' }}
             transition={{ duration: 4, ease: 'easeInOut' }}
           >

@@ -15,7 +15,7 @@ const ServicesPage = (props: Props) => {
   ]
   return (
     <div className='w-full h-screen bg-[#FFF6E9]'>
-        <div className='w-full h-full '>
+        <div className='w-full h-full pt-24 '>
           {list.map( item => (
             <div key={item.id}>
               <DetailServices serviceType={item.title} />   

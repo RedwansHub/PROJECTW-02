@@ -44,9 +44,9 @@ const LoadingCover = (props: Props) => {
                     <div></div>
                     <div className='flex justify-center items-center gap-4'>
                         <motion.div 
-                            initial={{ scale: 0.8, opacity: 0}}
-                            animate={{ scale: 1, opacity: 1 } }
-                            transition={{ duration: 4, delay: 1.5}}
+                            initial={{ rotate: '-180deg', opacity: 0}}
+                            animate={{ rotate: '0deg', opacity: 1 } }
+                            transition={{ duration: 2, delay: 3}}
                             className='w-full'>
                                 <Image src={'/images/logo.svg'} alt='image' width={60} height={60}
                                     className=''

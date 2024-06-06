@@ -5,9 +5,11 @@ import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi'
 
-type Props = {}
+type Props = {
+  delay?: any
+}
 
-const Header = (props: Props) => {
+const Header = ({ delay }: Props) => {
 
     const [menuOpen, setMenuOpen] = useState(false)
   
@@ -25,7 +27,7 @@ const Header = (props: Props) => {
     <motion.div 
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.8 }}
+        transition={{ duration: 1.6, delay: delay | 5.8 }}
         className='w-full h-full flex justify-between items-center p-4 px-12 bg-white/60 rounded-lg shadow-lg'>
       <Link href='/' className='flex cursor-pointer gap-2 items-center '>
         <Image src={'/Images/Logo.svg'} alt='image' width={35} height={35} />
