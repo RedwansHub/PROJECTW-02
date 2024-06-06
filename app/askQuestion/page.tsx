@@ -1,0 +1,115 @@
+'use client'
+
+import Card from '@/components/Sub/Card'
+import { AnimatePresence, motion, useAnimation, useInView } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
+
+type Props = {
+  AskedQuestion: string
+}
+
+const QuestionPage = ({ AskedQuestion }: Props) => {
+  return (
+    <div className='w-full h-screen'>
+      <AnimatePresence>
+        <motion.div 
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1,  }}
+        exit={{ opacity: 0}}
+        transition={{ duration: 1.8, delay: 2, ease: 'easeOut'}}
+          className='w-full h-full flex flex-col justify-between items-center'>
+            
+            <h2 className='text-4xl text-center w-full'>
+              Questions for Us.
+            </h2>
+            <Questions AskedQuestion={AskedQuestion} />
+        </motion.div>
+      </AnimatePresence>
+
+    </div>
+  )
+}
+
+const Questions = ({AskedQuestion } : Props) => {
+  
+  const Questions = [
+    { id: 1, question: 'Question 01'},
+    { id: 2, question: 'Question 02'},
+    { id: 3, question: 'Question 03'},
+    { id: 4, question: 'Question 04'},
+    { id: 5, question: 'Question 05'},
+  ]
+
+    const selected = Questions.find(item => item.question === AskedQuestion);
+    useEffect( () => {
+        
+    }, [])
+
+    const [openCardId, setOpenCardId] = useState<any>(null);
+
+    const handleCardClick = (id: any) => {
+        setOpenCardId((prevId: any) => prevId === id ? null : id);
+    };
+
+
+
+
+    const target = useRef(null)
+    const controls = useAnimation()
+    const View = useInView(target)
+
+    const vari = {
+        hidden: { opacity: 0, x: -300  },
+        visible: { opacity: 1, x: 0  },
+    }
+
+    const vari2 = {
+        hidden: { opacity: 0, y: 100  },
+        visible: { opacity: 1, y: 0  },
+    }
+
+    useEffect( () => {
+        if (View) {
+            controls.start('visible')
+        } else {
+            controls.start('hidden')
+
+        }
+    }, [View, controls])
+
+
+
+  return (
+    <div ref={target} className='w-full h-full  border-4  '>
+      <motion.div 
+              initial={{ opacity: 0}}
+              animate={{ opacity: 1}}
+              transition={{ duration: 2, delay: 1}}
+              className='w-full h-full items-end justify-center flex z-40 px-48  '>
+                  <div className='flex flex-col w-full text-center gap-2'>
+                  {Questions.map(item => (
+                      <motion.div
+                          key={item.id}
+                          initial='hidden'
+                          animate={controls}
+                          variants={vari2}
+                          transition={{ duration: 1, delay: 0.5 *item.id, ease: 'easeInOut'}}
+                          >
+                          <Card
+                              key={item.id}
+                              id={item.id}
+                              title={item.question}
+                              desc={item.id}
+                              isOpen={openCardId === item.id}
+                              onClick={handleCardClick}
+                          />
+                      </motion.div>
+                      ))}
+                  </div>
+      </motion.div>
+    </div>
+  )
+}
+
+
+export default QuestionPage
